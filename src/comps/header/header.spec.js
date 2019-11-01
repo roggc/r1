@@ -2,7 +2,6 @@ import React from 'react'
 import {Header} from './header'
 import {BrowserRouter as Router} from 'react-router-dom'
 import {render,cleanup} from '@testing-library/react'
-import 'chai/register-should'
 
 export default
 ()=>

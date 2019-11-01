@@ -1,7 +1,6 @@
 import React from 'react'
 import {About} from './about'
-import {mount} from 'enzyme'
-import 'chai/register-should'
+import {render,cleanup} from '@testing-library/react'
 
 export default
 ()=>
@@ -12,8 +11,9 @@ describe(
     it('should has text',
   ()=>
 {
-    const wrapper=mount(<About/>)
-    wrapper.text().should.not.have.lengthOf(0)
+    const {queryByText}=render(<About/>)
+    should.exist(queryByText('about page'))
 })
+ afterEach(cleanup)
   }
 )

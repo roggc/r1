@@ -1,6 +1,5 @@
 import React from 'react'
 import {App} from '../app/app'
-import 'chai/register-should'
 import {BrowserRouter as Router} from 'react-router-dom'
 import {render,fireEvent,cleanup} from '@testing-library/react'
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import {Footer} from './footer'
 import {render,cleanup} from '@testing-library/react'
-import 'chai/register-should'
 
 export default
 ()=>

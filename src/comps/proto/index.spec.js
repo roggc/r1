@@ -1,7 +1,6 @@
 import React from 'react'
 import C from './index'
-import {render} from '@testing-library/react'
-import 'chai/register-should'
+import {render,cleanup} from '@testing-library/react'
 
 export default
 ()=>

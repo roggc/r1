@@ -1,7 +1,6 @@
 import React from 'react'
 import {Home} from './home'
 import {render,queryByText,cleanup} from '@testing-library/react'
-import 'chai/register-should'
 
 export default
 ()=>
@@ -13,7 +12,8 @@ describe(
   ()=>
 {
   const {queryByTestId}=render(<Home/>)
-  should.exist(queryByText(queryByTestId('home'),'this is home'))
+  queryByTestId('home').should.have.text('this is home')
+  //should.exist(queryByText(queryByTestId('home'),'this is home'))
 })
 afterEach(cleanup)
   }
