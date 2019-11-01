@@ -9,19 +9,18 @@ describe(
   'menu',
   ()=>
   {
-    it('has home and about links that redirects to respectives routes in content component',
+    it('has an icon when clicked show and hides a popup',
   ()=>
 {
   const {queryByTestId}=render(<Router><App/></Router>)
-  should.exist(queryByTestId('home'))
-  should.not.exist(queryByTestId('about'))
-  fireEvent.click(queryByTestId('about-link'))
-  should.not.exist(queryByTestId('home'))
-  should.exist(queryByTestId('about'))
-  fireEvent.click(queryByTestId('home-link'))
-  should.exist(queryByTestId('home'))
-  should.not.exist(queryByTestId('about'))
+  should.not.exist(queryByTestId('popup'))
+  should.exist(queryByTestId('icon'))
+  fireEvent.click(queryByTestId('icon'))
+  should.exist(queryByTestId('popup'))
+  fireEvent.click(queryByTestId('icon'))
+  should.not.exist(queryByTestId('popup'))
 })
+
 afterEach(cleanup)
   }
 )

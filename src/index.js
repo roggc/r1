@@ -9,6 +9,7 @@ import footer from './comps/footer/footer.spec'
 import menu from './comps/menu/menu.spec'
 import home from './comps/home/home.spec'
 import about from './comps/about/about.spec'
+import popup from './comps/popup/popup.spec'
 
 chai.use(chaiDom)  // allow us to use extended chai-dom api
 
@@ -21,5 +22,6 @@ footer()
 menu()
 home()
 about()
+popup()
 
 mocha.run()

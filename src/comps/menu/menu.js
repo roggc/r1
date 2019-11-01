@@ -1,13 +1,16 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Popup} from '../popup/popup'
 
 export const Menu=
-()=>
+({state,dispatch})=>
 {
+  const togglePopup=
+  e=>
+  dispatch({type:'MENU_TOGGLE_POPUP'})
   const el=
-  <div>
-    <div className='home'><Link to='/' data-testid='home-link'>home</Link></div>
-    <div className='about'><Link to='/about' data-testid='about-link'>about</Link></div>
+  <div onClick={togglePopup} data-testid='menu'>
+    <div data-testid='icon'></div>
+    {state.menu.showPopup&& <Popup state={state} dispatch={dispatch}/>}
   </div>
   return el
 }
