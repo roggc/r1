@@ -14,10 +14,10 @@ describe(
 {
   const {queryByTestId}=render(<Router><App/></Router>)
   should.not.exist(queryByTestId('popup'))
-  should.exist(queryByTestId('icon'))
-  fireEvent.click(queryByTestId('icon'))
+  should.exist(queryByTestId('menu'))
+  fireEvent.click(queryByTestId('menu'))
   should.exist(queryByTestId('popup'))
-  fireEvent.click(queryByTestId('icon'))
+  fireEvent.click(queryByTestId('menu'))
   should.not.exist(queryByTestId('popup'))
 })
 

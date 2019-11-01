@@ -28,17 +28,25 @@ describe(
     fireEvent.click(queryByTestId('popup'))
     should.exist(queryByTestId('popup'))
 })
+it('when clicked outside popup hides popup',
+()=>
+{
+    const {queryByTestId}=render(<Router><App/></Router>)
+    fireEvent.click(queryByTestId('menu'))
+    fireEvent.click(queryByTestId('app'))
+    should.not.exist(queryByTestId('popup'))
+})
     it('has home and about links that redirects to respectives routes in content component',
   ()=>
 {
   const {queryByTestId}=render(<Router><App/></Router>)
   should.exist(queryByTestId('home'))
   should.not.exist(queryByTestId('about'))
-  fireEvent.click(queryByTestId('icon'))
+  fireEvent.click(queryByTestId('menu'))
   fireEvent.click(queryByTestId('about-link'))
   should.not.exist(queryByTestId('home'))
   should.exist(queryByTestId('about'))
-  fireEvent.click(queryByTestId('icon'))
+  fireEvent.click(queryByTestId('menu'))
   fireEvent.click(queryByTestId('home-link'))
   should.exist(queryByTestId('home'))
   should.not.exist(queryByTestId('about'))

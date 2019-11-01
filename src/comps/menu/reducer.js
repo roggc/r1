@@ -10,6 +10,13 @@ export default
         showPopup:!val.showPopup
       }
       return val
+    case 'MENU_HIDE_POPUP':
+      val=
+      {
+        ...val,
+        showPopup:false
+      }
+      return val
     default:
       return val
   }

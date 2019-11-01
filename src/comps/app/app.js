@@ -10,7 +10,7 @@ export const App=
 {
   const [state1,dispatch1]=useReducer(reducer,state)
   const el=
-  <div>
+  <div data-testid='app'>
       <div data-testid='header'>
         <Header state={state1} dispatch={dispatch1}/>
       </div>
