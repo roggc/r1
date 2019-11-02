@@ -3,7 +3,7 @@ import {CleanWebpackPlugin} from 'clean-webpack-plugin'
 
 export default
 {
-  entry:'./src/index.js',
+  entry:'./src-test/index.js',
   module:
   {
     rules:
@@ -15,21 +15,13 @@ export default
         {
           loader: 'babel-loader'
         }
-      },
-      {
-        test: /\.(png|jpe?g|gif|ico)$/i,
-        loader: 'file-loader',
-        options:
-        {
-          name: '[name].[ext]',
-        }
       }
     ]
   },
-  // node:
-  // {
-  //   fs:'empty'
-  // },
+  node:
+  {
+    fs:'empty'
+  },
   devServer:
   {
     historyApiFallback: true
@@ -40,7 +32,7 @@ export default
     new HtmlWebpackPlugin
     (
       {
-        template:'./src/public/index.html'
+        template:'./src-test/public/index.html'
       }
     )
   ]

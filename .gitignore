@@ -1,3 +1,5 @@
 /dist
 /node_modules
-/wpt
+/wp-test:t
+/wp:t
+.DS_Store
