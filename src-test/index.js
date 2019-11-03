@@ -15,6 +15,8 @@ import todos from './comps/todos/todos.spec'
 import addTodo from './comps/addTodo/addTodo.spec'
 import clearAll from './comps/clearAll/clearAll.spec'
 import checkAll from './comps/checkAll/checkAll.spec'
+import addTodoConfirm from './comps/addTodoConfirm/addTodoConfirm.spec'
+import modal from './comps/modal/modal.spec'
 
 chai.use(chaiDom)  // allow us to use extended chai-dom api
 
@@ -33,5 +35,7 @@ todos()
 addTodo()
 clearAll()
 checkAll()
+addTodoConfirm()
+modal()
 
 mocha.run()

@@ -1,4 +1,5 @@
 export default
 {
-  modal:false
+  modal:false,
+  input:''
 }

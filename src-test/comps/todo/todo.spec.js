@@ -15,7 +15,7 @@ describe(
   const {queryByTestId}=render(<Todo/>)
   should.exist(queryByTestId('trash'))
   should.exist(queryByTestId('check'))
-  should.exist(queryByTestId('todo'))
+  should.exist(queryByTestId('val'))
 })
 
 afterEach(cleanupAndRestoreRoute)

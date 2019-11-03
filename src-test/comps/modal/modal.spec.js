@@ -12,7 +12,6 @@ describe(
     it('renders its children',
   ()=>
 {
-  
 })
 afterEach(cleanupAndRestoreRoute)
   }

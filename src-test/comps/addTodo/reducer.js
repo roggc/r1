@@ -3,11 +3,18 @@ export default
 {
   switch (act.type)
   {
-    case 'ADD_TODO_SHOW_MODAL':
+    case 'ADDTODO_SET_SHOW_MODAL':
       val=
       {
         ...val,
-        modal:true
+        modal:act.val
+      }
+      return val
+    case 'ADDTODO_SET_INPUT':
+      val=
+      {
+        ...val,
+        input:act.val
       }
       return val
     default:
