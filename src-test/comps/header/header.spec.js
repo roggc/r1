@@ -1,7 +1,8 @@
 import React from 'react'
 import {App} from '../app/app'
 import {BrowserRouter as Router} from 'react-router-dom'
-import {render,cleanup} from '@testing-library/react'
+import {render} from '@testing-library/react'
+import {cleanupAndRestoreRoute} from '../../testUtils/cleanupAndRestoreRoute'
 
 export default
 ()=>
@@ -14,5 +15,5 @@ describe('header',
   const {queryByTestId}=render(<Router><App/></Router>)
   should.exist(queryByTestId('menu'))
 })
-afterEach(cleanup)
+afterEach(cleanupAndRestoreRoute)
 })

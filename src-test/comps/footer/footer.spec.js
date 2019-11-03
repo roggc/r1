@@ -1,6 +1,7 @@
 import React from 'react'
 import {Footer} from './footer'
-import {render,cleanup} from '@testing-library/react'
+import {render} from '@testing-library/react'
+import {cleanupAndRestoreRoute} from '../../testUtils/cleanupAndRestoreRoute'
 
 export default
 ()=>
@@ -18,6 +19,6 @@ describe
         should.exist(queryByText(/2019 roggc/i))
       }
     )
-    afterEach(cleanup)
+    afterEach(cleanupAndRestoreRoute)
   }
 )

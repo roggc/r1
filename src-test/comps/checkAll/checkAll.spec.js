@@ -1,18 +1,19 @@
 import React from 'react'
-import {Proto} from './proto'
+import {CheckAll} from './checkAll'
 import {render} from '@testing-library/react'
 import {cleanupAndRestoreRoute} from '../../testUtils/cleanupAndRestoreRoute'
 
 export default
 ()=>
 describe(
-  'proto',
+  'checkAll',
   ()=>
   {
-    it('',
+    it('is a button',
   ()=>
 {
-
+  const {queryByRole}=render(<CheckAll/>)
+  should.exist(queryByRole('button'))
 })
 afterEach(cleanupAndRestoreRoute)
   }

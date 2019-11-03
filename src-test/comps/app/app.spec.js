@@ -1,7 +1,8 @@
 import React from 'react'
 import {App} from './app'
-import {render,cleanup} from '@testing-library/react'
+import {render} from '@testing-library/react'
 import {BrowserRouter as Router} from 'react-router-dom'
+import {cleanupAndRestoreRoute} from '../../testUtils/cleanupAndRestoreRoute'
 
 export default
 ()=>
@@ -19,6 +20,6 @@ describe(
         should.exist(queryByTestId('footer'))
       }
     )
-    afterEach(cleanup)
+    afterEach(cleanupAndRestoreRoute)
   }
 )

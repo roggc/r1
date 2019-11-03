@@ -10,6 +10,11 @@ import menu from './comps/menu/menu.spec'
 import home from './comps/home/home.spec'
 import about from './comps/about/about.spec'
 import popup from './comps/popup/popup.spec'
+import todo from './comps/todo/todo.spec'
+import todos from './comps/todos/todos.spec'
+import addTodo from './comps/addTodo/addTodo.spec'
+import clearAll from './comps/clearAll/clearAll.spec'
+import checkAll from './comps/checkAll/checkAll.spec'
 
 chai.use(chaiDom)  // allow us to use extended chai-dom api
 
@@ -23,5 +28,10 @@ menu()
 home()
 about()
 popup()
+todo()
+todos()
+addTodo()
+clearAll()
+checkAll()
 
 mocha.run()

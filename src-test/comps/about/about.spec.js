@@ -1,6 +1,7 @@
 import React from 'react'
 import {About} from './about'
-import {render,cleanup} from '@testing-library/react'
+import {render} from '@testing-library/react'
+import {cleanupAndRestoreRoute} from '../../testUtils/cleanupAndRestoreRoute'
 
 export default
 ()=>
@@ -14,6 +15,6 @@ describe(
     const {queryByText}=render(<About/>)
     should.exist(queryByText('about page'))
 })
- afterEach(cleanup)
+ afterEach(cleanupAndRestoreRoute)
   }
 )

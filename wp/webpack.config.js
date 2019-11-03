@@ -3,7 +3,14 @@ import {CleanWebpackPlugin} from 'clean-webpack-plugin'
 
 export default
 {
-  entry:'./src/index.js',
+  entry:
+  {
+    react: './src/index.js'
+  },
+  output:
+  {
+    filename:'[name].js'
+  },
   module:
   {
     rules:

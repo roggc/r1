@@ -1,7 +1,8 @@
 import React from 'react'
 import {App} from '../app/app'
 import {BrowserRouter as Router} from 'react-router-dom'
-import {render,fireEvent,cleanup} from '@testing-library/react'
+import {render,fireEvent} from '@testing-library/react'
+import {cleanupAndRestoreRoute} from '../../testUtils/cleanupAndRestoreRoute'
 
 export default
 ()=>
@@ -21,6 +22,6 @@ describe(
   should.not.exist(queryByTestId('popup'))
 })
 
-afterEach(cleanup)
+afterEach(cleanupAndRestoreRoute)
   }
 )

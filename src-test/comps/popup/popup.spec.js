@@ -1,7 +1,8 @@
 import React from 'react'
 import {App} from '../app/app'
 import {BrowserRouter as Router} from 'react-router-dom'
-import {render,cleanup,fireEvent} from '@testing-library/react'
+import {render,fireEvent} from '@testing-library/react'
+import {cleanupAndRestoreRoute} from '../../testUtils/cleanupAndRestoreRoute'
 
 export default
 ()=>
@@ -51,6 +52,6 @@ it('when clicked outside popup hides popup',
   should.exist(queryByTestId('home'))
   should.not.exist(queryByTestId('about'))
 })
-afterEach(cleanup)
+afterEach(cleanupAndRestoreRoute)
   }
 )
