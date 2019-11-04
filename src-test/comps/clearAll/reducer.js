@@ -3,10 +3,11 @@ export default
 {
   switch (act.type)
   {
-    case '':
+    case 'CLEARALL_SET_SHOW_MODAL':
       val=
       {
-        ...val
+        ...val,
+        modal:act.val
       }
       return val
     default:

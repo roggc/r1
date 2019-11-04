@@ -5,7 +5,7 @@ export const Home=
 {
   const el=
   <div data-testid='home'>
-    hol amdicalex magradamolt gugar aminecraft itincunparecamasta daganfer unapaginaguep👹🤑👻🤡🎃🤟atutagradescriure? toculabataria                
+    this is home
   </div>
   return el
 }

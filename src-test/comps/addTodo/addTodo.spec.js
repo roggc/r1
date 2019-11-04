@@ -32,6 +32,21 @@ should.exist(queryByTestId('modal'))
 should.exist(queryByTestId('addTodoConfirm'))
 should.exist(queryByRole(queryByTestId('modal'),'textbox'))
 })
+it('when clicked on input modal does not disappear',
+()=>
+{
+  const {queryByTestId}=render(<BrowserRouter><App/></BrowserRouter>)
+  fireEvent.click(queryByTestId('menu'))
+  fireEvent.click(queryByTestId('todos-link'))
+  const addTodo=queryByTestId('addTodo')
+  fireEvent.click(queryByRole(addTodo,'button'))
+  const modal=queryByTestId('modal')
+  should.exist(modal)
+  const input=queryByRole(modal,'textbox')
+  should.exist(input)
+  fireEvent.click(input)
+  should.exist(queryByTestId('modal'))
+})
 afterEach(cleanupAndRestoreRoute)
   }
 )

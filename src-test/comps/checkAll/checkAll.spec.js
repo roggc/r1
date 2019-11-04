@@ -15,6 +15,7 @@ describe(
   const {queryByRole}=render(<CheckAll/>)
   should.exist(queryByRole('button'))
 })
+it('opens a modal to confirm check all todos')
 afterEach(cleanupAndRestoreRoute)
   }
 )

@@ -1,4 +1,6 @@
 import menu from '../menu/state'
+import addTodo from '../addTodo/state'
+import todos from '../todos/state'
 
 // const app=
 // {
@@ -8,5 +10,7 @@ import menu from '../menu/state'
 export default
 {
   // app,
-  menu
+  menu,
+  addTodo,
+  todos
 }

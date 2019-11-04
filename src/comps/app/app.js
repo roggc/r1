@@ -14,7 +14,7 @@ export const App=
       <div data-testid='header'>
         <Header state={state1} dispatch={dispatch1}/>
       </div>
-      <div data-testid='content'><Content/></div>
+      <div data-testid='content'><Content state={state1} dispatch={dispatch1}/></div>
       <div data-testid='footer'><Footer/></div>
   </div>
   return el

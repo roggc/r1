@@ -12,7 +12,7 @@ export const Menu=
   dispatch({type:'MENU_TOGGLE_POPUP'})
   const el=
   <div onClick={togglePopup} data-testid='menu' ref={menuRef}>
-    <div data-testid='icon'></div>
+    <div data-testid='icon'>menu</div>
     {state.menu.showPopup&& <Popup state={state} dispatch={dispatch}/>}
   </div>
   return el

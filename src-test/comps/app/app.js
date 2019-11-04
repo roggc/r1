@@ -9,12 +9,16 @@ export const App=
 ()=>
 {
   const [state1,dispatch1]=useReducer(reducer,state)
+  const [state2,dispatch2]=useReducer(reducer,state)
   const el=
   <div data-testid='app'>
       <div data-testid='header'>
         <Header state={state1} dispatch={dispatch1}/>
       </div>
-      <div data-testid='content'><Content state={state1} dispatch={dispatch1}/></div>
+      <div data-testid='content'>
+        <Content state1={state1} dispatch1={dispatch1}
+          state2={state2} dispatch2={dispatch2}/>
+      </div>
       <div data-testid='footer'><Footer/></div>
   </div>
   return el
