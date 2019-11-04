@@ -1,6 +1,7 @@
 import React from 'react'
-import {CheckAll} from './checkAll'
-import {render} from '@testing-library/react'
+import {App} from '../app/app'
+import {BrowserRouter} from 'react-router-dom'
+import {render,fireEvent,queryByRole,queryByTestId} from '@testing-library/react'
 import {cleanupAndRestoreRoute} from '../../testUtils/cleanupAndRestoreRoute'
 
 export default
@@ -9,13 +10,19 @@ describe(
   'checkAll',
   ()=>
   {
-    it('is a button',
-  ()=>
+it('is a button, when clicked, opens a modal to confirm check all todos',
+()=>
 {
-  const {queryByRole}=render(<CheckAll/>)
-  should.exist(queryByRole('button'))
+  const {container,queryAllByTestId}=render(<BrowserRouter><App/></BrowserRouter>)
+  fireEvent.click(queryByTestId(container,'menu'))
+  fireEvent.click(queryByTestId(container,'todos-link'))
+  const buttonCheckAll=queryByRole(queryByTestId(container,'checkAll'),'button')
+  should.exist(buttonCheckAll)
+  fireEvent.click(buttonCheckAll)
+  const modal=queryByTestId(container,'modal')
+  should.exist(modal)
+  should.exist(queryByTestId(modal,'checkAllConfirm'))
 })
-it('opens a modal to confirm check all todos')
 afterEach(cleanupAndRestoreRoute)
   }
 )

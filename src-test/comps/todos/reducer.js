@@ -58,6 +58,17 @@ export default
         todos:[]
       }
       return val
+    case 'TODOS_CHECKALL':
+      todos=val.todos.filter(todo=>true)
+      todos.forEach(
+        todo=>todo.done=true
+      )
+      val=
+      {
+        ...val,
+        todos
+      }
+      return val
     default:
       return val
   }
