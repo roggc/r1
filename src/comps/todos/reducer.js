@@ -13,6 +13,62 @@ export default
         todos
       }
       return val
+    case 'TODOS_DELETE':
+      todos=val.todos.filter(
+        (todo,i)=>
+        {
+          if(i===act.val)
+          {
+            return false
+          }
+          else
+          {
+            return true
+          }
+        }
+      )
+      val=
+      {
+        ...val,
+        todos
+      }
+      return val
+    case 'TODOS_CHECK':
+      todos=val.todos.filter(todo=>true)
+      todos.some(
+        (todo,i)=>
+        {
+          if(i===act.val)
+          {
+            todo.done=true
+            return true
+          }
+        }
+      )
+      val=
+      {
+        ...val,
+        todos
+      }
+      return val
+    case 'TODOS_DELETEALL':
+      val=
+      {
+        ...val,
+        todos:[]
+      }
+      return val
+    case 'TODOS_CHECKALL':
+      todos=val.todos.filter(todo=>true)
+      todos.forEach(
+        todo=>todo.done=true
+      )
+      val=
+      {
+        ...val,
+        todos
+      }
+      return val
     default:
       return val
   }

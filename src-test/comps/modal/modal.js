@@ -7,6 +7,7 @@ export const Modal=
   e=>
   dispatch({type:'MODAL_SET_SHOW',val:false})
   const el=
+  state.modal.show&&
   <div data-testid='modal' onClick={modalDisappears}>
   {children}
   </div>

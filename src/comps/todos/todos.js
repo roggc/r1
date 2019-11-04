@@ -5,18 +5,20 @@ import {CheckAll} from '../checkAll/checkAll'
 import {Todo} from '../todo/todo'
 
 export const Todos=
-({state,dispatch})=>
+({state1,dispatch1,state2,dispatch2,state3,dispatch3})=>
 {
   const el=
   <div data-testid='todos'>
-    <AddTodo state={state} dispatch={dispatch}/>
-    <ClearAll/>
-    <CheckAll/>
+    <AddTodo state={state1} dispatch={dispatch1}/>
+    <ClearAll state1={state1} dispatch1={dispatch1}
+      state2={state2} dispatch2={dispatch2}/>
+    <CheckAll state1={state1} dispatch1={dispatch1}
+      state2={state3} dispatch2={dispatch3}/>
     <div>
       {
-        state.todos.todos.map(
+        state1.todos.todos.map(
           (todo,i)=>
-          <Todo key={i} val={todo.text} check={todo.done}/>
+          <Todo key={i} state={state1} dispatch={dispatch1} i={i}/>
         )
       }
     </div>

@@ -10,12 +10,9 @@ export const ClearAll=
   const el=
   <div data-testid='clearAll'>
     <button onClick={clearAllClick}>clearAll</button>
-    {
-      state2.modal.show&&
-      <Modal state={state2} dispatch={dispatch2}>
-        <ClearAllConfirm state={state1} dispatch={dispatch1}/>
-      </Modal>
-    }
+    <Modal state={state2} dispatch={dispatch2}>
+      <ClearAllConfirm state={state1} dispatch={dispatch1}/>
+    </Modal>    
   </div>
   return el
 }

@@ -3,11 +3,10 @@ export default
 {
   switch (act.type)
   {
-    case 'MODAL_SET_SHOW':
+    case '':
       val=
       {
-        ...val,
-        show:act.val
+        ...val
       }
       return val
     default:

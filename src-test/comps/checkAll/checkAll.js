@@ -10,12 +10,9 @@ export const CheckAll=
   const el=
   <div data-testid='checkAll'>
     <button onClick={checkAllClick}>checkAll</button>
-    {
-      state2.modal.show&&
-      <Modal state={state2} dispatch={dispatch2}>
-        <CheckAllConfirm state={state1} dispatch={dispatch1}/>
-      </Modal>
-    }
+    <Modal state={state2} dispatch={dispatch2}>
+      <CheckAllConfirm state={state1} dispatch={dispatch1}/>
+    </Modal>  
   </div>
   return el
 }

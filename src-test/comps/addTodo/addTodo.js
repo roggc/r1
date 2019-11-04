@@ -16,14 +16,11 @@ export const AddTodo=
   const el=
   <div data-testid='addTodo'>
     <button onClick={showModal}>add</button>
-    {
-      state.modal.show&&
-      <Modal state={state} dispatch={dispatch}>
-        <input type='text' onChange={inputChange}
-          value={state.addTodo.input} onClick={inputClick}/>
-        <AddTodoConfirm state={state} dispatch={dispatch}/>
-      </Modal>
-    }
+    <Modal state={state} dispatch={dispatch}>
+      <input type='text' onChange={inputChange}
+        value={state.addTodo.input} onClick={inputClick}/>
+      <AddTodoConfirm state={state} dispatch={dispatch}/>
+    </Modal>
   </div>
   return el
 }
