@@ -1,13 +1,13 @@
 import React from 'react'
 
 export const Modal=
-({children,state,dispatch})=>
+({children,redux})=>
 {
   const modalDisappears=
   e=>
-  dispatch({type:'MODAL_SET_SHOW',val:false})
+  redux.dispatch({type:'MODAL_SET_SHOW',val:false})
   const el=
-  state.modal.show&&
+  redux.state.modal.show&&
   <div data-testid='modal' onClick={modalDisappears}>
   {children}
   </div>

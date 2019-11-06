@@ -3,13 +3,6 @@ export default
 {
   switch (act.type)
   {
-    case 'ADDTODO_SET_SHOW_MODAL':
-      val=
-      {
-        ...val,
-        modal:act.val
-      }
-      return val
     case 'ADDTODO_SET_INPUT':
       val=
       {

@@ -1,14 +1,14 @@
 import React from 'react'
 
 export const AddTodoConfirm=
-({state,dispatch})=>
+({redux})=>
 {
   const confirmAdd=
   e=>
   {
-    if(state.addTodo.input!=='')
+    if(redux.state.addTodo.input!=='')
     {
-      dispatch({type:'TODOS_ADD',val:state.addTodo.input})
+      redux.dispatch({type:'TODOS_ADD',val:redux.state.addTodo.input})
     }
   }
   const el=

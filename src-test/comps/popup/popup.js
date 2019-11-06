@@ -2,11 +2,11 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 export const Popup=
-({state,dispatch})=>
+({redux})=>
 {
   const togglePopup=
   e=>
-  dispatch({type:'MENU_TOGGLE_POPUP'})
+  redux.dispatch({type:'MENU_TOGGLE_POPUP'})
   const stopPropagation=
   e=>
   e.stopPropagation()

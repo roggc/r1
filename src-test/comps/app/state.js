@@ -1,20 +1,17 @@
-import menu from '../menu/state'
 import addTodo from '../addTodo/state'
 import todos from '../todos/state'
-import clearAll from '../clearAll/state'
 import modal from '../modal/state'
+import menu from '../menu/state'
 
-// const app=
-// {
-//
-// }
+const app=
+{
+}
 
 export default
 {
-  // app,
-  menu,
+  app,
   addTodo,
   todos,
-  clearAll,
-  modal
+  modal,
+  menu
 }

@@ -2,12 +2,12 @@ import React from 'react'
 import {Menu} from '../menu/menu'
 
 export const Header=
-({state,dispatch})=>
+(props)=>
 {
   const el=
   <div>
     <div>
-      <Menu state={state} dispatch={dispatch}/>
+      <Menu {...props}/>
     </div>
   </div>
   return el

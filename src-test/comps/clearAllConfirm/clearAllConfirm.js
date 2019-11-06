@@ -1,11 +1,11 @@
 import React from 'react'
 
 export const ClearAllConfirm=
-({state,dispatch})=>
+({redux})=>
 {
   const clearAllClick=
   e=>
-  dispatch({type:'TODOS_DELETEALL'})
+  redux.dispatch({type:'TODOS_DELETEALL'})
   const el=
   <div data-testid='clearAllConfirm'>
     <button onClick={clearAllClick}>clear all</button>

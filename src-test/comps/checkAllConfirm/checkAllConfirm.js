@@ -1,10 +1,10 @@
 import React from 'react'
 
 export const CheckAllConfirm=
-({state,dispatch})=>
+({redux})=>
 {
   const checkAllClick=
-  e=>dispatch({type:'TODOS_CHECKALL'})
+  e=>redux.dispatch({type:'TODOS_CHECKALL'})
   const el=
   <div data-testid='checkAllConfirm'>
     <button onClick={checkAllClick}>check all</button>

@@ -3,23 +3,23 @@ import {Modal} from '../modal/modal'
 import {AddTodoConfirm} from '../addTodoConfirm/addTodoConfirm'
 
 export const AddTodo=
-({state,dispatch})=>
+({redux})=>
 {
   const showModal=
   e=>
-  dispatch({type:'MODAL_SET_SHOW',val:true})
+  redux.dispatch({type:'MODAL_SET_SHOW',val:true})
   const inputChange=
   e=>
-  dispatch({type:'ADDTODO_SET_INPUT',val:e.target.value})
+  redux.dispatch({type:'ADDTODO_SET_INPUT',val:e.target.value})
   const inputClick=
   e=>e.stopPropagation()
   const el=
   <div data-testid='addTodo'>
     <button onClick={showModal}>add</button>
-    <Modal state={state} dispatch={dispatch}>
+    <Modal redux={redux}>
       <input type='text' onChange={inputChange}
-        value={state.addTodo.input} onClick={inputClick}/>
-      <AddTodoConfirm state={state} dispatch={dispatch}/>
+        value={redux.state.addTodo.input} onClick={inputClick}/>
+      <AddTodoConfirm redux={redux}/>
     </Modal>
   </div>
   return el
