@@ -1,5 +1,5 @@
 import React from 'react'
-import useReducer from '../../hooks/useReducer2'
+import useReducer from '../../hooks/useReducer'
 import {Content} from '../content/content'
 import {Header} from '../header/header'
 import {Footer} from '../footer/footer'
